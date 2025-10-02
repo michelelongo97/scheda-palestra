@@ -1,0 +1,17 @@
+{
+  "name": "scheda-palestra-be",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env app.js",
+    "watch": "node --env-file=.env --watch app.js"
+  },
+  "keywords": [],
+  "author": "Michele Longo",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
