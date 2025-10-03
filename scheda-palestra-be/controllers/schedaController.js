@@ -2,7 +2,9 @@
 const schede = require("../data/schedaData");
 
 //Index
-const index = (req, res) => {};
+const index = (req, res) => {
+  res.json(schede);
+};
 
 //Show
 const show = (req, res) => {};
