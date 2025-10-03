@@ -11,6 +11,6 @@ router.get("/", schedaController.index);
 router.get("/:id", schedaController.show);
 
 //Delete
-router.get("/:id", schedaController.destroy);
+router.delete("/:id", schedaController.destroy);
 
 module.exports = router;
