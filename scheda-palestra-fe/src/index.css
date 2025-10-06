@@ -1,0 +1,31 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERAL */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HEADER */
+header {
+  background-color: #3da9a9;
+  height: 15vh;
+}
+
+/* MAIN */
+main {
+  background-color: #75dac7;
+  height: 70vh;
+}
+
+/* FOOTER */
+footer {
+  background-color: #146272;
+  height: 15vh;
+}

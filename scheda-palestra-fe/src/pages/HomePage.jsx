@@ -16,11 +16,13 @@ export default function HomePage() {
   return (
     <>
       <h1>Home</h1>
-      {schede.map((scheda) => (
-        <div key={scheda.id}>
-          <Link to={`/scheda/${scheda.id}`}>{scheda.nome}</Link>
-        </div>
-      ))}
+      <div className="container">
+        {schede.map((scheda) => (
+          <div key={scheda.id}>
+            <Link to={`/scheda/${scheda.id}`}>{scheda.nome}</Link>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

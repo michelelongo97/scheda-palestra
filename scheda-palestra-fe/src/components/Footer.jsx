@@ -1,3 +1,7 @@
 export default function Footer() {
-  return <h5>ML</h5>;
+  return (
+    <footer>
+      <h5>ML</h5>
+    </footer>
+  );
 }

@@ -1,3 +1,7 @@
 export default function Header() {
-  return <h5>header</h5>;
+  return (
+    <header>
+      <h5>Scheda Palestra</h5>
+    </header>
+  );
 }
