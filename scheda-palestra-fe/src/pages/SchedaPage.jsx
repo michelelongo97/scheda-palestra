@@ -24,7 +24,21 @@ export default function SchedaPage() {
 
   return (
     <>
-      <h1>Scheda: {scheda.nome}</h1>
+      <div className="container">
+        <div className="scheda-dettaglio">
+          <h2>{scheda.nome}</h2>
+          {scheda.image && (
+            <img
+              src={`${import.meta.env.VITE_BE_URL}${scheda.image}`}
+              alt={scheda.nome}
+              className="scheda-img"
+            />
+          )}
+          <p>{scheda.descrizione}</p>
+
+          <h3>Esercizi</h3>
+        </div>
+      </div>
     </>
   );
 }

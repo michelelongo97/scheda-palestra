@@ -15,13 +15,20 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>Home</h1>
       <div className="container">
-        {schede.map((scheda) => (
-          <div key={scheda.id}>
-            <Link to={`/scheda/${scheda.id}`}>{scheda.nome}</Link>
-          </div>
-        ))}
+        <div className="card">
+          {schede.map((scheda) => (
+            <div key={scheda.id}>
+              <Link to={`/scheda/${scheda.id}`}>
+                <h3>{scheda.nome}</h3>
+                <img
+                  src={`${import.meta.env.VITE_BE_URL}${scheda.image}`}
+                  alt={scheda.nome}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
