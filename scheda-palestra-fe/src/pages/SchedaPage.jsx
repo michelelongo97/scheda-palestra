@@ -23,22 +23,35 @@ export default function SchedaPage() {
   useEffect(fetchScheda, [id, navigate]);
 
   return (
-    <>
-      <div className="container">
-        <div className="scheda-dettaglio">
+    <div className="container">
+      <div className="scheda-wrapper">
+        <div className="scheda-image">
+          <img
+            src={`${import.meta.env.VITE_BE_URL}${scheda.image}`}
+            alt={scheda.nome}
+            className="scheda-img"
+          />
+        </div>
+        <div className="scheda-info">
           <h2>{scheda.nome}</h2>
-          {scheda.image && (
-            <img
-              src={`${import.meta.env.VITE_BE_URL}${scheda.image}`}
-              alt={scheda.nome}
-              className="scheda-img"
-            />
-          )}
-          <p>{scheda.descrizione}</p>
-
+          <p className="scheda-desc">{scheda.descrizione}</p>
+          <div className="scheda-meta">
+            <span>Durata: {scheda.durata}</span>
+            <span>Livello: {scheda.livello}</span>
+          </div>
           <h3>Esercizi</h3>
+          <ul>
+            {scheda.esercizi?.map((es, index) => (
+              <li key={index}>
+                {es.nome} - {es.serie} x {es.ripetizioni}
+              </li>
+            ))}
+          </ul>
+          <button className="btn-back" onClick={() => navigate("/")}>
+            Torna alla Home
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
