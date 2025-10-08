@@ -47,7 +47,7 @@ export default function SchedaPage() {
               </li>
             ))}
           </ul>
-          <button className="btn-back" onClick={() => navigate("/")}>
+          <button className="btn" onClick={() => navigate("/")}>
             Torna alla Home
           </button>
         </div>
