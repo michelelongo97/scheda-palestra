@@ -140,9 +140,30 @@ footer {
   text-align: left;
 }
 
+.form-scheda {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.form-scheda input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.esercizio {
+  display: grid;
+  background-color: #e9f7f7;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
 /* BOTTONE TORNA ALLA HOME */
 .btn {
-  margin-top: 20px;
+  margin: 20px 5px;
   background-color: #146272;
   color: #fff;
   border: none;
