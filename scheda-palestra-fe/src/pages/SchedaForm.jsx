@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 const initialFormData = {
   nome: "",
@@ -35,13 +36,30 @@ export default function SchedaForm() {
 
   const addEsercizio = (e) => {
     e.preventDefault();
-    console.log(formData.esercizi);
+    setFormData((currentFormData) => ({
+      ...currentFormData,
+      esercizi: [
+        ...currentFormData.esercizi,
+        { nome: "", serie: 0, ripetizioni: 0, peso: 0 },
+      ],
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_BE_URL}/schede`,
+        formData
+      );
+      console.log("Scheda salvata:", response.data);
+      setFormData(initialFormData);
+      alert("Scheda creata con successo!");
+    } catch (error) {
+      console.error("Errore durante il salvataggio della scheda", error);
+      alert("Errore nel salvataggio della scheda");
+    }
   };
 
   return (

@@ -161,10 +161,21 @@ footer {
   margin-bottom: 12px;
 }
 
-/* BOTTONE TORNA ALLA HOME */
+/* BOTTONI */
 .btn {
   margin: 20px 5px;
   background-color: #146272;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-danger {
+  margin: 20px 5px;
+  background-color: rgb(155, 9, 9);
   color: #fff;
   border: none;
   border-radius: 8px;

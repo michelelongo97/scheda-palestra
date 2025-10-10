@@ -22,6 +22,22 @@ export default function SchedaPage() {
 
   useEffect(fetchScheda, [id, navigate]);
 
+  const handleDelete = async () => {
+    const conferma = window.confirm(
+      "Sei sicuro di voler eliminare questa scheda?"
+    );
+    if (!conferma) return;
+
+    try {
+      await axios.delete(`/schede/${id}`);
+      alert("Scheda eliminata con successo!");
+      navigate("/");
+    } catch (error) {
+      console.error("Errore durante eliminazione", error);
+      alert("Errore durante l'eliminazione della scheda");
+    }
+  };
+
   return (
     <div className="container">
       <div className="scheda-wrapper">
@@ -49,6 +65,9 @@ export default function SchedaPage() {
           </ul>
           <button className="btn" onClick={() => navigate("/")}>
             Torna alla Home
+          </button>
+          <button className="btn-danger" onClick={handleDelete}>
+            Elimina scheda
           </button>
         </div>
       </div>
