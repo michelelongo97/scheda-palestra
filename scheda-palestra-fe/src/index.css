@@ -153,6 +153,12 @@ footer {
   border-radius: 6px;
 }
 
+.form-scheda select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 .esercizio {
   display: grid;
   background-color: #e9f7f7;

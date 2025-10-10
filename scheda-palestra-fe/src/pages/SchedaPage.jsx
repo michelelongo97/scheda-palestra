@@ -66,6 +66,13 @@ export default function SchedaPage() {
           <button className="btn" onClick={() => navigate("/")}>
             Torna alla Home
           </button>
+          <button
+            className="btn"
+            onClick={() => navigate(`/scheda/${scheda.id}/edit`)}
+          >
+            Modifica scheda
+          </button>
+
           <button className="btn-danger" onClick={handleDelete}>
             Elimina scheda
           </button>

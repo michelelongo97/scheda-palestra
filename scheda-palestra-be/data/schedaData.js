@@ -3,6 +3,8 @@ const schede = [
     id: 1,
     nome: "Forza - Parte Superiore",
     image: "/images/1petto.jpg",
+    livello: "Avanzato",
+    durata: "60 min",
     esercizi: [
       { id: 1, nome: "Panca piana", serie: 5, ripetizioni: 5, peso: 60 },
       {
@@ -19,6 +21,8 @@ const schede = [
     id: 2,
     nome: "Forza - Parte Inferiore",
     image: "/images/2gambe.jpg",
+    livello: "Avanzato",
+    durata: "65 min",
     esercizi: [
       { id: 1, nome: "Squat", serie: 5, ripetizioni: 5, peso: 80 },
       { id: 2, nome: "Stacco da terra", serie: 4, ripetizioni: 5, peso: 100 },
@@ -29,7 +33,8 @@ const schede = [
     id: 3,
     nome: "Ipertrofia Petto e Tricipiti",
     image: "/images/3petto.jpg",
-
+    livello: "Intermedio",
+    durata: "55 min",
     esercizi: [
       { id: 1, nome: "Panca inclinata", serie: 4, ripetizioni: 10, peso: 40 },
       { id: 2, nome: "Croci con manubri", serie: 3, ripetizioni: 12, peso: 10 },
@@ -40,7 +45,8 @@ const schede = [
     id: 4,
     nome: "Ipertrofia Schiena e Bicipiti",
     image: "/images/4schiena.jpg",
-
+    livello: "Intermedio",
+    durata: "60 min",
     esercizi: [
       {
         id: 1,
@@ -57,16 +63,20 @@ const schede = [
     id: 5,
     nome: "Spalle e Core",
     image: "/images/5spalle.jpg",
+    livello: "Intermedio",
+    durata: "45 min",
     esercizi: [
       { id: 1, nome: "Alzate laterali", serie: 4, ripetizioni: 12, peso: 8 },
       { id: 2, nome: "Arnold press", serie: 3, ripetizioni: 10, peso: 15 },
-      { id: 3, nome: "Plank", serie: 3, ripetizioni: 60, peso: null }, // secondi
+      { id: 3, nome: "Plank", serie: 3, ripetizioni: 60, peso: null },
     ],
   },
   {
     id: 6,
     nome: "Gambe Completo",
     image: "/images/6gambe.jpg",
+    livello: "Intermedio",
+    durata: "50 min",
     esercizi: [
       { id: 1, nome: "Leg press", serie: 4, ripetizioni: 12, peso: 100 },
       { id: 2, nome: "Leg curl", serie: 3, ripetizioni: 15, peso: 40 },
@@ -77,7 +87,8 @@ const schede = [
     id: 7,
     nome: "Circuito Brucia Grassi",
     image: "/images/7grassi.jpg",
-
+    livello: "Principiante",
+    durata: "40 min",
     esercizi: [
       { id: 1, nome: "Burpees", serie: 4, ripetizioni: 15, peso: null },
       {
@@ -94,7 +105,8 @@ const schede = [
     id: 8,
     nome: "Allenamento Funzionale",
     image: "/images/8funzionale.jpg",
-
+    livello: "Intermedio",
+    durata: "50 min",
     esercizi: [
       { id: 1, nome: "Kettlebell swing", serie: 4, ripetizioni: 15, peso: 20 },
       { id: 2, nome: "Trazioni prone", serie: 3, ripetizioni: 10, peso: null },
@@ -105,7 +117,8 @@ const schede = [
     id: 9,
     nome: "Cardio + Core",
     image: "/images/9cardio.jpg",
-
+    livello: "Principiante",
+    durata: "35 min",
     esercizi: [
       {
         id: 1,
@@ -113,7 +126,7 @@ const schede = [
         serie: 1,
         ripetizioni: 20,
         peso: null,
-      }, // minuti
+      },
       {
         id: 2,
         nome: "Addominali crunch",
@@ -128,7 +141,8 @@ const schede = [
     id: 10,
     nome: "Full Body Principianti",
     image: "/images/10full.jpg",
-
+    livello: "Principiante",
+    durata: "45 min",
     esercizi: [
       { id: 1, nome: "Panca piana", serie: 3, ripetizioni: 12, peso: 30 },
       { id: 2, nome: "Leg press", serie: 3, ripetizioni: 12, peso: 60 },

@@ -4,14 +4,9 @@ import axios from "axios";
 const initialFormData = {
   nome: "",
   image: "",
-  esercizi: [
-    {
-      nome: "",
-      serie: 0,
-      ripetizioni: 0,
-      peso: 0,
-    },
-  ],
+  livello: "",
+  durata: "",
+  esercizi: [],
 };
 
 export default function SchedaForm() {
@@ -48,10 +43,16 @@ export default function SchedaForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const schedaDaSalvare = {
+      ...formData,
+      image:
+        formData.image.trim() === "" ? "/images/default.jpg" : formData.image,
+    };
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_BE_URL}/schede`,
-        formData
+        schedaDaSalvare
       );
       console.log("Scheda salvata:", response.data);
       setFormData(initialFormData);
@@ -83,6 +84,30 @@ export default function SchedaForm() {
           placeholder="Inserisci url immagine"
           value={formData.image}
           onChange={(e) => handleField("image", e.target.value)}
+        />
+
+        <label htmlFor="livello">Livello</label>
+        <select
+          type="text"
+          name="livello"
+          value={formData.livello}
+          onChange={(e) => handleField("livello", e.target.value)}
+          required
+        >
+          <option value="">Seleziona livello</option>
+          <option value="Principiante">Principiante</option>
+          <option value="Intermedio">Intermedio</option>
+          <option value="Avanzato">Avanzato</option>
+        </select>
+
+        <label htmlFor="durata">Durata</label>
+        <input
+          type="text"
+          name="durata"
+          placeholder="Inserisci durata"
+          value={formData.durata}
+          onChange={(e) => handleField("durata", e.target.value)}
+          required
         />
 
         <h3>Esercizi</h3>

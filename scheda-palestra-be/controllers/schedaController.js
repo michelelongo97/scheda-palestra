@@ -19,7 +19,7 @@ const show = (req, res) => {
 
 //Create
 const create = (req, res) => {
-  const { nome, image, esercizi } = req.body;
+  const { nome, image, durata, livello, esercizi } = req.body;
 
   // Validazione base
   if (!nome) {
@@ -33,7 +33,9 @@ const create = (req, res) => {
   const newScheda = {
     id: newId,
     nome,
-    image: image || "/default.jpg", // puoi mettere un'immagine di default
+    durata,
+    livello,
+    image: image || "/images/default.jpg", // puoi mettere un'immagine di default
     esercizi: esercizi || [],
   };
 
@@ -66,6 +68,8 @@ const update = (req, res) => {
   const updatedScheda = {
     id: schede[index].id, // mantengo l'id invariato
     nome,
+    durata,
+    livello,
     esercizi,
     image,
   };
