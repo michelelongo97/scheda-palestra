@@ -65,7 +65,7 @@ export default function SchedaForm() {
 
   return (
     <div className="container">
-      <h1>Nuova scheda</h1>
+      <h2>Crea nuova scheda</h2>
       <form className="form-scheda" onSubmit={handleSubmit}>
         <label htmlFor="nome">Nome</label>
         <input

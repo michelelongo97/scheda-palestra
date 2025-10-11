@@ -12,6 +12,12 @@
   margin-right: auto;
 }
 
+.container h2 {
+  text-align: center;
+  color: #146272;
+  padding-top: 10px;
+}
+
 /* HEADER */
 header {
   background-color: #3da9a9;
@@ -31,11 +37,16 @@ main {
 /* FOOTER */
 footer {
   background-color: #146272;
-  height: 15vh;
+  height: 10vh;
   color: antiquewhite;
   text-align: center;
   font-size: 36px;
   padding: 16px;
+}
+
+footer p {
+  font-size: 16px;
+  text-align: right;
 }
 
 /* CONTAINER DELLE CARD */
@@ -171,7 +182,7 @@ footer {
 .btn {
   margin: 20px 5px;
   background-color: #146272;
-  color: #fff;
+  color: antiquewhite;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
@@ -194,6 +205,10 @@ footer {
 .btn:hover {
   background-color: #0d4a54;
   transform: scale(1.03);
+}
+
+.btn-danger:hover {
+  background-color: rgb(120, 0, 0);
 }
 
 .btn:active {

@@ -21,6 +21,24 @@ export default function HomePage() {
     fetchSchede();
   }, []);
 
+  const handleDelete = async (id) => {
+    const conferma = window.confirm(
+      "Sei sicuro di voler eliminare questa scheda?"
+    );
+    if (!conferma) return;
+
+    try {
+      await axios.delete(`/schede/${id}`);
+      setSchede((prevSchede) =>
+        prevSchede.filter((scheda) => scheda.id !== id)
+      );
+      alert("Scheda eliminata con successo!");
+    } catch (error) {
+      console.error("Errore durante eliminazione", error);
+      alert("Errore durante l'eliminazione della scheda");
+    }
+  };
+
   return (
     <div className="container">
       {/* Loading */}
@@ -52,6 +70,12 @@ export default function HomePage() {
                 <p>{scheda.livello || "Livello non specificato"}</p>
                 <p>{scheda.durata || "Durata non disponibile"}</p>
               </Link>
+              <button
+                className="btn-danger"
+                onClick={() => handleDelete(scheda.id)}
+              >
+                Elimina scheda
+              </button>
             </div>
           ))}
         </div>

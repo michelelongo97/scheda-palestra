@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <h5>ML</h5>
+      <p>Michele Longo - 2025</p>
     </footer>
   );
 }

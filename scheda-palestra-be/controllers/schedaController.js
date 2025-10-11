@@ -57,8 +57,8 @@ const update = (req, res) => {
   }
 
   // Verifica che tutti i campi obbligatori siano presenti
-  const { nome, esercizi, image } = req.body;
-  if (!nome || !esercizi || !image) {
+  const { nome, esercizi, image, durata, livello } = req.body;
+  if (!nome || !esercizi || !image || !durata || !livello) {
     return res.status(400).json({
       error: "Tutti i campi sono obbligatori per il metodo PUT",
     });
