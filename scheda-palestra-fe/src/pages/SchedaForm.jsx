@@ -6,19 +6,24 @@ const initialFormData = {
   image: "",
   livello: "",
   durata: "",
-  esercizi: [],
+  esercizi: [
+    {
+      nome: "",
+      serie: 0,
+      ripetizioni: 0,
+      peso: 0,
+    },
+  ],
 };
 
 export default function SchedaForm() {
   const [formData, setFormData] = useState(initialFormData);
 
   const handleField = (fieldName, fieldValue) => {
-    setFormData((currentFormData) => {
-      return {
-        ...currentFormData,
-        [fieldName]: fieldValue,
-      };
-    });
+    setFormData((currentFormData) => ({
+      ...currentFormData,
+      [fieldName]: fieldValue,
+    }));
   };
 
   const handleFieldEx = (index, fieldName, fieldValue) => {
@@ -43,11 +48,13 @@ export default function SchedaForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const schedaDaSalvare = {
-      ...formData,
-      image:
-        formData.image.trim() === "" ? "/images/default.jpg" : formData.image,
-    };
+    // Creiamo una copia pulita del form
+    const schedaDaSalvare = { ...formData };
+
+    // Se l'immagine è vuota, non inviarla
+    if (!schedaDaSalvare.image.trim()) {
+      delete schedaDaSalvare.image;
+    }
 
     try {
       const response = await axios.post(
@@ -65,7 +72,7 @@ export default function SchedaForm() {
 
   return (
     <div className="container">
-      <h2>Crea nuova scheda</h2>
+      <h1>Nuova scheda</h1>
       <form className="form-scheda" onSubmit={handleSubmit}>
         <label htmlFor="nome">Nome</label>
         <input
@@ -77,18 +84,17 @@ export default function SchedaForm() {
           required
         />
 
-        <label htmlFor="nome">Immagine</label>
+        <label htmlFor="image">Immagine</label>
         <input
           type="text"
           name="image"
-          placeholder="Inserisci url immagine"
+          placeholder="Inserisci URL immagine (opzionale)"
           value={formData.image}
           onChange={(e) => handleField("image", e.target.value)}
         />
 
         <label htmlFor="livello">Livello</label>
         <select
-          type="text"
           name="livello"
           value={formData.livello}
           onChange={(e) => handleField("livello", e.target.value)}
@@ -114,7 +120,7 @@ export default function SchedaForm() {
 
         {formData.esercizi.map((ex, index) => (
           <div key={index} className="esercizio">
-            <label htmlFor="esercizio">Nome esercizio</label>
+            <label>Nome esercizio</label>
             <input
               type="text"
               placeholder="Inserisci nome esercizio"
@@ -123,7 +129,7 @@ export default function SchedaForm() {
               required
             />
 
-            <label htmlFor="serie">Numero di serie</label>
+            <label>Numero di serie</label>
             <input
               type="number"
               placeholder="Inserisci numero di serie"
@@ -132,7 +138,7 @@ export default function SchedaForm() {
               required
             />
 
-            <label htmlFor="ripetizioni">Numero di ripetizioni</label>
+            <label>Numero di ripetizioni</label>
             <input
               type="number"
               placeholder="Inserisci numero ripetizioni"
@@ -143,7 +149,7 @@ export default function SchedaForm() {
               required
             />
 
-            <label htmlFor="peso">Peso</label>
+            <label>Peso</label>
             <input
               type="number"
               placeholder="Inserisci peso"

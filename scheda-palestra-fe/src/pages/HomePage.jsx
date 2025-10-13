@@ -62,10 +62,15 @@ export default function HomePage() {
             <div className="card" key={scheda.id}>
               <Link to={`/scheda/${scheda.id}`}>
                 <img
-                  src={`${import.meta.env.VITE_BE_URL}${scheda.image}`}
+                  src={
+                    scheda.image
+                      ? `${import.meta.env.VITE_BE_URL}${scheda.image}`
+                      : "images/default.jpg"
+                  }
                   alt={scheda.nome}
                   className="card-img"
                 />
+
                 <h3>{scheda.nome}</h3>
                 <p>{scheda.livello || "Livello non specificato"}</p>
                 <p>{scheda.durata || "Durata non disponibile"}</p>

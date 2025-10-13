@@ -35,7 +35,7 @@ const create = (req, res) => {
     nome,
     durata,
     livello,
-    image: image || "/images/default.jpg", // puoi mettere un'immagine di default
+    image: image,
     esercizi: esercizi || [],
   };
 
