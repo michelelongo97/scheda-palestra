@@ -3,13 +3,36 @@ import { Link } from "react-router";
 export default function Header() {
   return (
     <header>
-      <h5>Scheda Palestra</h5>
-      <Link to="/">
-        <button className="btn">Home</button>
-      </Link>
-      <Link to="/nuova">
-        <button className="btn">Aggiungi Scheda</button>
-      </Link>
+      <h5>FisioFitness</h5>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">
+              <span>Home</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/schede">
+              <span>Schede</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/nuova">
+              <span>Aggiungi Scheda</span>
+            </Link>
+          </li>
+          <li>
+            <Link to={import.meta.env.VITE_MEET_URL}>
+              <span>Prenota un appuntamento</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/chisiamo">
+              <span>Chi Siamo</span>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 }
