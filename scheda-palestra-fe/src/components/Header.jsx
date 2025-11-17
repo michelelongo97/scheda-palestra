@@ -1,33 +1,47 @@
 import { Link } from "react-router";
+import { useState } from "react";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
     <header>
-      <h5>FisioFitness</h5>
-      <nav>
+      <div className="header-top">
+        <h5>FisioFitness</h5>
+
+        <button className="hamburger-btn" onClick={toggleMenu}>
+          =
+        </button>
+      </div>
+      <nav className={menuOpen ? "open" : ""}>
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/" onClick={() => setMenuOpen(false)}>
               <span>Home</span>
             </Link>
           </li>
           <li>
-            <Link to="/schede">
+            <Link to="/schede" onClick={() => setMenuOpen(false)}>
               <span>Schede</span>
             </Link>
           </li>
           <li>
-            <Link to="/nuova">
+            <Link to="/nuova" onClick={() => setMenuOpen(false)}>
               <span>Aggiungi Scheda</span>
             </Link>
           </li>
           <li>
-            <Link to={import.meta.env.VITE_MEET_URL}>
+            <Link
+              to={import.meta.env.VITE_MEET_URL}
+              onClick={() => setMenuOpen(false)}
+            >
               <span>Prenota un appuntamento</span>
             </Link>
           </li>
           <li>
-            <Link to="/chisiamo">
+            <Link to="/chisiamo" onClick={() => setMenuOpen(false)}>
               <span>Chi Siamo</span>
             </Link>
           </li>
