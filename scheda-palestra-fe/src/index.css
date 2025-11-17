@@ -26,6 +26,9 @@ header {
   text-align: center;
   font-size: 36px;
   padding: 16px;
+  position: sticky;
+  z-index: 9;
+  top: 0;
 }
 
 .header-top {

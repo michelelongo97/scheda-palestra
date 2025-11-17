@@ -36,6 +36,7 @@ export default function Header() {
             <Link
               to={import.meta.env.VITE_MEET_URL}
               onClick={() => setMenuOpen(false)}
+              target="_blank"
             >
               <span>Prenota un appuntamento</span>
             </Link>
