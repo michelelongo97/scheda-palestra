@@ -9,10 +9,10 @@ export default function Header() {
   return (
     <header>
       <div className="header-top">
-        <h5>FisioFitness</h5>
+        <img className="logo" src="/images/logo.png" alt="logo" />
 
         <button className="hamburger-btn" onClick={toggleMenu}>
-          =
+          ☰
         </button>
       </div>
       <nav className={menuOpen ? "open" : ""}>

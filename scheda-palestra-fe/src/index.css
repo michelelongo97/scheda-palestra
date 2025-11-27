@@ -8,8 +8,7 @@
 /* GENERAL */
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 
 .container h2 {
@@ -18,67 +17,118 @@
   padding-top: 10px;
 }
 
-/* HEADER */
+/* ======================= HEADER ======================= */
 header {
+  width: 100%;
   background-color: #146272;
   color: antiquewhite;
-  text-align: center;
-  font-size: 36px;
-  padding: 16px;
   position: sticky;
-  z-index: 9;
   top: 0;
+  z-index: 999;
+  padding: 10px 0;
 }
 
+/* Parte alta header → LOGO + HAMBURGER */
 .header-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* MOBILE → logo centrato */
   align-items: center;
+  position: relative;
 }
 
-header nav {
+.logo {
+  width: 180px;
+  height: auto;
+}
+
+/* HAMBURGER (solo mobile) */
+.hamburger-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: antiquewhite;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+}
+
+/* MENU MOBILE NASCOSTO */
+nav {
   display: none;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  transition: all 0.3s ease;
+  text-align: center;
 }
 
 nav.open {
-  display: flex;
+  display: block; /* quando clicchi si apre */
 }
 
-header nav ul {
+nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   width: 100%;
 }
 
-header nav ul li {
-  padding: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+nav ul li {
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-header nav ul li a {
+nav ul li a {
   color: antiquewhite;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   display: block;
 }
 
-header nav ul li a:hover {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.1);
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* MAIN */
+/* ======================= DESKTOP ======================= */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between; /* logo SX menu DX */
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .header-top {
+    justify-content: flex-start; /* logo torna a sinistra */
+  }
+
+  nav {
+    display: block; /* menu sempre visibile */
+    width: auto;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  nav ul li {
+    padding: 0;
+    border: none;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .hamburger-btn {
+    display: none; /* hamburger sparisce */
+  }
+}
+
+/* ======================= MAIN ======================= */
 main {
   background-color: #75dac7;
   min-height: 75vh;
 }
 
-/* FOOTER */
+/* ======================= FOOTER ======================= */
 footer {
   background-color: #3da9a9;
   height: 20vh;
@@ -93,7 +143,7 @@ footer p {
   text-align: right;
 }
 
-/* CONTAINER DELLE CARD */
+/* ======================= CARD GRID ======================= */
 .cards-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -101,14 +151,26 @@ footer p {
   padding: 16px;
 }
 
-/* SINGOLA CARD */
+@media (min-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =============== CARD =============== */
 .card {
-  background-color: white;
+  background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .card:hover {
@@ -131,47 +193,37 @@ footer p {
 .card p {
   color: #333;
   font-size: 16px;
-  margin: 4px 0 12px 0;
+  margin: 4px 0 12px;
 }
 
-.card a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  padding: 8px;
-}
-
-/* PAGINA DETTAGLIO SCHEDA */
+/* =============== DETTAGLIO SCHEDA =============== */
 .scheda-wrapper {
+  background: white;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: auto;
   max-width: 900px;
+  border-radius: 12px;
+  padding: 20px;
   gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .scheda-image img {
   width: 100%;
   border-radius: 10px;
-  object-fit: cover;
 }
 
 .scheda-info h2 {
+  text-align: center;
   color: #146272;
   margin-bottom: 8px;
-  text-align: center;
 }
 
 .scheda-desc {
   font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  margin-bottom: 12px;
   text-align: justify;
+  margin-bottom: 12px;
 }
 
 .scheda-meta {
@@ -183,18 +235,7 @@ footer p {
   margin-bottom: 20px;
 }
 
-.scheda-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.scheda-info li {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-}
-
+/* FORM */
 .form-scheda {
   display: flex;
   flex-direction: column;
@@ -202,12 +243,7 @@ footer p {
   margin-top: 1rem;
 }
 
-.form-scheda input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
+.form-scheda input,
 .form-scheda select {
   padding: 8px;
   border: 1px solid #ccc;
@@ -215,110 +251,41 @@ footer p {
 }
 
 .esercizio {
-  display: grid;
   background-color: #e9f7f7;
   padding: 10px;
   border-radius: 8px;
   margin-bottom: 12px;
 }
 
-/* BOTTONI */
-.btn {
-  margin: 20px 5px;
-  background-color: #146272;
-  color: antiquewhite;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
+/* BUTTONS */
+.btn,
 .btn-danger {
   margin: 20px 5px;
-  background-color: rgb(155, 9, 9);
-  color: #fff;
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.hamburger-btn {
-  font-size: 28px;
-  background: none;
-  border: none;
+.btn {
+  background-color: #146272;
   color: antiquewhite;
-  cursor: pointer;
-  display: block;
 }
-
 .btn:hover {
   background-color: #0d4a54;
   transform: scale(1.03);
 }
 
+.btn-danger {
+  background-color: rgb(155, 9, 9);
+  color: white;
+}
 .btn-danger:hover {
   background-color: rgb(120, 0, 0);
 }
 
-.btn:active {
+.btn:active,
+.btn-danger:active {
   transform: scale(0.98);
-}
-
-/* MEDIA QUERIES */
-@media (min-width: 600px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  header nav ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  header nav {
-    display: flex !important;
-    justify-content: center;
-    background: none;
-  }
-
-  header nav ul {
-    flex-direction: row;
-    display: flex;
-    gap: 20px;
-  }
-
-  header nav ul li {
-    border: none;
-  }
-
-  .scheda-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .scheda-image {
-    flex: 1;
-  }
-
-  .scheda-info {
-    flex: 1;
-    padding-left: 24px;
-  }
-
-  .hamburger-btn {
-    display: none;
-  }
-}
-
-@media (min-width: 992px) {
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
