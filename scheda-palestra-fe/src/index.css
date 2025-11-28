@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+body {
+  font-family: "Nunito", sans-serif;
+}
+
 /* GENERAL */
 .container {
   max-width: 1200px;
@@ -20,12 +24,13 @@
 /* ======================= HEADER ======================= */
 header {
   width: 100%;
+  min-height: 100px;
   background-color: #146272;
   color: antiquewhite;
   position: sticky;
   top: 0;
   z-index: 999;
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 /* Parte alta header → LOGO + HAMBURGER */
