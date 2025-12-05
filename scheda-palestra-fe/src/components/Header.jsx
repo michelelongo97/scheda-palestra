@@ -9,8 +9,9 @@ export default function Header() {
   return (
     <header>
       <div className="header-top">
-        <img className="logo" src="/images/logo.png" alt="logo" />
-
+        <Link to={"/"}>
+          <img className="logo" src="/images/logo.png" alt="logo" />
+        </Link>
         <button className="hamburger-btn" onClick={toggleMenu}>
           ☰
         </button>

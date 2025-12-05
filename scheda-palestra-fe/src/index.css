@@ -89,44 +89,6 @@ nav ul li a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* ======================= DESKTOP ======================= */
-@media (min-width: 768px) {
-  header {
-    display: flex;
-    justify-content: space-between; /* logo SX menu DX */
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  .header-top {
-    justify-content: flex-start; /* logo torna a sinistra */
-  }
-
-  nav {
-    display: block; /* menu sempre visibile */
-    width: auto;
-  }
-
-  nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-  }
-
-  nav ul li {
-    padding: 0;
-    border: none;
-  }
-
-  nav ul li a {
-    font-size: 18px;
-  }
-
-  .hamburger-btn {
-    display: none; /* hamburger sparisce */
-  }
-}
-
 /* ======================= MAIN ======================= */
 main {
   background-color: #75dac7;
@@ -136,16 +98,25 @@ main {
 /* ======================= FOOTER ======================= */
 footer {
   background-color: #3da9a9;
-  height: 20vh;
   color: antiquewhite;
-  text-align: center;
-  font-size: 36px;
-  padding: 16px;
 }
 
-footer p {
-  font-size: 16px;
-  text-align: right;
+footer .row {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+}
+
+footer .row .col {
+  padding: 10px 0;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  padding: 4px 0;
 }
 
 /* ======================= CARD GRID ======================= */
@@ -293,4 +264,46 @@ footer p {
 .btn:active,
 .btn-danger:active {
   transform: scale(0.98);
+}
+
+/* ======================= DESKTOP ======================= */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between; /* logo SX menu DX */
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .header-top {
+    justify-content: flex-start; /* logo torna a sinistra */
+  }
+
+  nav {
+    display: block; /* menu sempre visibile */
+    width: auto;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+
+  nav ul li {
+    padding: 0;
+    border: none;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+  }
+
+  .hamburger-btn {
+    display: none; /* hamburger sparisce */
+  }
+
+  footer .row {
+    justify-content: space-around;
+  }
 }
