@@ -34,14 +34,14 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              to={import.meta.env.VITE_MEET_URL}
+            <a
+              href={import.meta.env.VITE_MEET_URL}
               onClick={() => setMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Prenota un appuntamento</span>
-            </Link>
+              Prenota un appuntamento
+            </a>
           </li>
           <li>
             <Link to="/chisiamo" onClick={() => setMenuOpen(false)}>
