@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
-const initialFormData = {
+{
+  /*FORMDATA 
+  const initialFormData = {
   nome: "",
   image: "",
   livello: "",
@@ -15,8 +17,12 @@ const initialFormData = {
     },
   ],
 };
+  */
+}
 
 export default function SchedaForm() {
+  {
+    /* LOGICA FORMDATA 
   const [formData, setFormData] = useState(initialFormData);
 
   const handleField = (fieldName, fieldValue) => {
@@ -69,9 +75,13 @@ export default function SchedaForm() {
       alert("Errore nel salvataggio della scheda");
     }
   };
+  */
+  }
 
   return (
-    <div className="container">
+    <div>COMING SOON</div>
+    /* FORM AGGIUNGI SCHEDA
+      <div className="container">
       <h1>Nuova scheda</h1>
       <form className="form-scheda" onSubmit={handleSubmit}>
         <label htmlFor="nome">Nome</label>
@@ -167,5 +177,7 @@ export default function SchedaForm() {
         </button>
       </form>
     </div>
+  
+  */
   );
 }

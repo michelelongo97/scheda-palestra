@@ -1,17 +1,19 @@
 import { Link } from "react-router";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header>
       <div className="header-top">
-        <Link to={"/"}>
+        <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
           <img className="logo" src="/images/logo.png" alt="logo" />
-        </Link>
+        </div>
         <button className="hamburger-btn" onClick={toggleMenu}>
           ☰
         </button>

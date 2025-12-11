@@ -24,7 +24,9 @@ export default function SchedaPage() {
     fetchScheda();
   }, [id, navigate]);
 
-  const handleDelete = async () => {
+  {
+    /* FUNZIONE PER ELIMINARE LA SCHEDA
+    const handleDelete = async () => {
     const conferma = window.confirm("Vuoi davvero eliminare questa scheda?");
     if (!conferma) return;
 
@@ -37,7 +39,8 @@ export default function SchedaPage() {
       alert("Errore durante l'eliminazione della scheda");
     }
   };
-
+*/
+  }
   if (!scheda) return <p>Caricamento...</p>;
 
   return (
@@ -77,12 +80,16 @@ export default function SchedaPage() {
             )}
           </ul>
 
+          <button className="btn" onClick={() => navigate("/schede")}>
+            Torna alle schede
+          </button>
           <button className="btn" onClick={() => navigate("/")}>
             Torna alla Home
           </button>
+          {/* BOTTONE ELIMINA SCHEDA COLLEGATO ALLA FUNZIONE
           <button className="btn-danger" onClick={handleDelete}>
             Elimina scheda
-          </button>
+          </button>*/}
         </div>
       </div>
     </div>

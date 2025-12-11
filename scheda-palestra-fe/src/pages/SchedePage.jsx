@@ -1,11 +1,13 @@
 import axios from "../api/axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
   const [schede, setSchede] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const fetchSchede = async () => {
     try {
@@ -21,7 +23,9 @@ export default function HomePage() {
     fetchSchede();
   }, []);
 
-  const handleDelete = async (id) => {
+  {
+    /* FUNZIONE PER ELIMINARE SCHEDA 
+    const handleDelete = async (id) => {
     const conferma = window.confirm(
       "Sei sicuro di voler eliminare questa scheda?"
     );
@@ -38,6 +42,8 @@ export default function HomePage() {
       alert("Errore durante l'eliminazione della scheda");
     }
   };
+    */
+  }
 
   return (
     <div className="container">
@@ -75,12 +81,21 @@ export default function HomePage() {
                 <p>{scheda.livello || "Livello non specificato"}</p>
                 <p>{scheda.durata || "Durata non disponibile"}</p>
               </Link>
+
+              <button
+                onClick={() => navigate(`/scheda/${scheda.id}`)}
+                className="btn"
+              >
+                Guarda Scheda
+              </button>
+              {/*
+              BOTTONE PER ELIMINARE SCHEDA COLLEGATO ALLA FUNZIONE
               <button
                 className="btn-danger"
                 onClick={() => handleDelete(scheda.id)}
               >
                 Elimina scheda
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
