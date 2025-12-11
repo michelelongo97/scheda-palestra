@@ -101,6 +101,12 @@ main {
 footer {
   background-color: #3da9a9;
   color: antiquewhite;
+  padding: 20px 10px;
+}
+
+footer h4 {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 footer .row {
@@ -117,8 +123,30 @@ footer ul {
   list-style: none;
 }
 
-footer li {
+footer ul li {
   padding: 4px 0;
+}
+
+.footer-social ul li a svg {
+  font-size: 28px;
+  color: #75dac7;
+  transition: 0.3s;
+}
+
+.footer-social ul li a:hover svg {
+  transform: scale(1.2);
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 /* ======================= CARD GRID ======================= */
@@ -307,6 +335,34 @@ footer li {
   }
 
   footer .row {
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  footer .col {
+    flex: 1;
+  }
+
+  footer h4 {
+    font-size: 22px;
+  }
+
+  .footer-social ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .footer-social ul li a svg {
+    font-size: 30px;
+  }
+  .footer-info p {
+    font-size: 17px;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    font-size: 15px;
   }
 }

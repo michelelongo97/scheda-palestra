@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -56,7 +55,7 @@ export default function Header() {
           </li>
           <li
             onClick={() => {
-              navigate("chisiamo");
+              navigate("/chisiamo");
               setMenuOpen(false);
             }}
           >

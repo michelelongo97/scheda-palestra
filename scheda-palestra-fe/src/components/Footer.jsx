@@ -11,7 +11,8 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           {/* COLONNA SOCIAL */}
-          <div className="col">
+          <div className="col footer-social">
+            <h4>Seguimi sui social</h4>
             <ul>
               <li>
                 <a
@@ -59,6 +60,7 @@ export default function Footer() {
 
           {/* COLONNA SPONSOR */}
           <div className="col">
+            <h4>Sponsor</h4>
             <ul>
               <li>Sponsor 1</li>
               <li>Sponsor 2</li>
@@ -66,6 +68,21 @@ export default function Footer() {
               <li>Sponsor 4</li>
             </ul>
           </div>
+          {/* COLONNA INFO LEGALI */}
+          <div className="col footer-info">
+            <h4>Informazioni</h4>
+            <p>FisioFitness Dr. Costantino Picciallo</p>
+            <p>P.IVA 00000000000</p>
+            <p>Email: email@email.it</p>
+            <p>Sede: Gravina in Puglia (BA), Italia</p>
+          </div>
+        </div>
+        {/* COPYRIGHT */}
+        <div className="footer-bottom">
+          <p>
+            © {new Date().getFullYear()} Fisiofitness – Tutti i diritti
+            riservati
+          </p>
         </div>
       </div>
     </footer>
