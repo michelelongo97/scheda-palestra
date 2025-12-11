@@ -20,20 +20,29 @@ export default function Header() {
       </div>
       <nav className={menuOpen ? "open" : ""}>
         <ul>
-          <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              <span>Home</span>
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/");
+              setMenuOpen(false);
+            }}
+          >
+            <span>Home</span>
           </li>
-          <li>
-            <Link to="/schede" onClick={() => setMenuOpen(false)}>
-              <span>Schede</span>
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/schede");
+              setMenuOpen(false);
+            }}
+          >
+            <span>Schede</span>
           </li>
-          <li>
-            <Link to="/nuova" onClick={() => setMenuOpen(false)}>
-              <span>Aggiungi Scheda</span>
-            </Link>
+          <li
+            onClick={() => {
+              navigate("/nuova");
+              setMenuOpen(false);
+            }}
+          >
+            <span>Aggiungi Scheda</span>
           </li>
           <li>
             <a
@@ -45,10 +54,13 @@ export default function Header() {
               Prenota un appuntamento
             </a>
           </li>
-          <li>
-            <Link to="/chisiamo" onClick={() => setMenuOpen(false)}>
-              <span>Chi Siamo</span>
-            </Link>
+          <li
+            onClick={() => {
+              navigate("chisiamo");
+              setMenuOpen(false);
+            }}
+          >
+            <span>Chi Siamo</span>
           </li>
         </ul>
       </nav>

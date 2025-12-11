@@ -76,8 +76,10 @@ nav ul {
 nav ul li {
   padding: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
 }
 
+nav ul li,
 nav ul li a {
   color: antiquewhite;
   text-decoration: none;
@@ -85,7 +87,7 @@ nav ul li a {
   display: block;
 }
 
-nav ul li a:hover {
+nav ul li:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
