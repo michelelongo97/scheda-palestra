@@ -106,7 +106,7 @@ footer {
 
 footer h4 {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 footer .row {
@@ -135,6 +135,17 @@ footer ul li {
 
 .footer-social ul li a:hover svg {
   transform: scale(1.2);
+}
+
+.footer-sponsor img {
+  width: 120px;
+  height: auto;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+.footer-sponsor img:hover {
+  opacity: 1;
 }
 
 .footer-info p {
@@ -335,7 +346,7 @@ footer ul li {
   }
 
   footer .row {
-    justify-content: space-between;
+    justify-content: baseline;
     align-items: flex-start;
     gap: 40px;
   }
@@ -346,19 +357,35 @@ footer ul li {
 
   footer h4 {
     font-size: 22px;
+    text-align: center;
   }
 
   .footer-social ul {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
   }
 
   .footer-social ul li a svg {
     font-size: 30px;
   }
+
+  .footer-sponsor img {
+    width: 200px;
+    height: auto;
+  }
+
+  .footer-sponsor ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
   .footer-info p {
     font-size: 17px;
+    text-align: center;
   }
 
   .footer-bottom {
