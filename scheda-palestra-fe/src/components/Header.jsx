@@ -35,6 +35,7 @@ export default function Header() {
           >
             <span>Schede</span>
           </li>
+          {/*
           <li
             onClick={() => {
               navigate("/nuova");
@@ -43,6 +44,7 @@ export default function Header() {
           >
             <span>Aggiungi Scheda</span>
           </li>
+        */}
           <li>
             <a
               href={import.meta.env.VITE_MEET_URL}
