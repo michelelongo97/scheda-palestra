@@ -61,7 +61,7 @@ export default function Header() {
               setMenuOpen(false);
             }}
           >
-            <span>Chi Siamo</span>
+            <span>Chi Sono</span>
           </li>
         </ul>
       </nav>
